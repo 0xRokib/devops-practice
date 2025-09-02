@@ -8,7 +8,7 @@ const taskRoutes = require('./routes/tasks');
 dotenv.config();
 
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
@@ -36,13 +36,10 @@ app.use('*', (req, res) => {
 
 // Database connection
 mongoose
-  .connect(
-    'mongodb+srv://rokibulhasanph_db_user:h251mgqWX2vHqSh6@cluster0.vb9mply.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-  )
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {

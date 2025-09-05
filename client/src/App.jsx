@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import TaskList from './components/TaskList';
+import { useEffect, useState } from 'react';
 import AddTaskDialog from './components/AddTaskDialog';
 import LoadingSpinner from './components/LoadingSpinner';
+import TaskList from './components/TaskList';
 import { taskService } from './services/taskService';
 
 function App() {

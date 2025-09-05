@@ -17,8 +17,6 @@ function App() {
     fetchTasks();
   }, []);
 
-  let unUsedVar = 'Bro';
-
   const fetchTasks = async () => {
     try {
       setLoading(true);

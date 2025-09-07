@@ -10,6 +10,7 @@ services:
 
   frontend:
     build: ./client
+    args: VITE_API_URL=http://3.90.66.146:5001/api
     container_name: mern-frontend
     restart: always
     ports:
